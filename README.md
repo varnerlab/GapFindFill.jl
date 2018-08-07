@@ -1,5 +1,6 @@
 # JGFF
 Gap Finding &amp; Filling in Julia 
+using [Gurobi](http://www.gurobi.com/) solver
 
 ### Reference:
 - Maranas, Costas D., and Ali R. Zomorrodi. Optimization methods in metabolic networks. John Wiley & Sons, 2016.
