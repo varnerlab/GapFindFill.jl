@@ -1,0 +1,8 @@
+feasibtol 1.000000e-9
+epopt 1.000000e-9
+eprhs 1.000000e-9
+epint 1.000000e-9
+varsel 3
+bndstrenind 1
+nodefileind 2
+workmem 2500
