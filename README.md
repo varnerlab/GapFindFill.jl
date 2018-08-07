@@ -1,5 +1,6 @@
 # JGFF
-Gap Finding &amp; Filling in Julia 
+Gap Finding &amp; Filling in Julia
+
 using [Gurobi](http://www.gurobi.com/) solver
 
 ### Reference:
