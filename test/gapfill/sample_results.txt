@@ -1,0 +1,35 @@
+
+*********** 2dglc[c] *************
+This problem metabolite can be solved by adding a minimum of 2.0 rxns to the model
+
+1)  'EX_2DOXG6P(e)' '2DOXG6P_t'
+2)  'EX_2DGLC(e)' '2DGLC_t'
+ERROR: modelstat= 10.00 (Integer infeasible): No more solutions with the reactions in this database!
+
+*********** 2doxg6p[c] *************
+This problem metabolite can be solved by adding a minimum of 2.0 rxns to the model
+
+1)  'EX_2DOXG6P(e)' '2DOXG6P_t'
+2)  '2DOXG6PP' 'EX_2DGLC(e)' '2DGLC_t'
+ERROR: modelstat= 10.00 (Integer infeasible): No more solutions with the reactions in this database!
+
+*********** 2dr5p[c] *************
+This problem metabolite can be solved by adding a minimum of 2.0 rxns to the model
+
+1)  'EX_DRIB(e)' 'DRIB_t'
+2)  'EX_2DR5P(e)' '2DR5P_t'
+ERROR: modelstat= 10.00 (Integer infeasible): No more solutions with the reactions in this database!
+
+*********** 4gudbutn[c] *************
+This problem metabolite can be solved by adding a minimum of 2.0 rxns to the model
+
+1)  'EX_4GUDBD(e)' '4GUDBD_t'
+2)  'EX_4GUDBUTN(e)' '4GUDBUTN_t'
+ERROR: modelstat= 10.00 (Integer infeasible): No more solutions with the reactions in this database!
+
+*********** alatrna[c] *************
+This problem metabolite can be solved by adding a minimum of 2.0 rxns to the model
+
+1)  'EX_TRNAALA(e)' 'TRNAALA_t'
+2)  'EX_ALATRNA(e)' 'ALATRNA_t'
+ERROR: modelstat= 10.00 (Integer infeasible): No more solutions with the reactions in this database!
