@@ -1,4 +1,5 @@
 # JGFF
+An implementation of [Gap Finding & Filling](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-8-212) in Julia. 
 Gap Finding &amp; Filling in Julia
 
 using [Gurobi](http://www.gurobi.com/) solver,
