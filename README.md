@@ -45,14 +45,35 @@ Argument | Required | Description
 isRev | yes | true if corresponding reaction is reversible
 isCyt | yes | true if corresponding metabolite is in cytosol
 isExt | yes | true if corresponding metabolite is in extracellular compartment;
-stoiMatrix | yes | stoichiometric matrix, \|compounds\| stem:[a^2+b\time] \|reactions\|
+stoiMatrix | yes | stoichiometric matrix, \|compounds\| * \|reactions\|
 fluxLB | yes | flux lower bound;
 fluxUB | yes | flux upper bound;
-solver | optional | CPLEX, Gurobi, GLPK;
+solver | optional | CPLEX, Gurobi or GLPK;
 epsilon | optional | minimum amount to be considered active;
 bigM | optional | constant used in MILP model;
 nonZero | optional | minimum stoichiometric coefficient to be considered non-zero.
 
+The "__fill_gaps_min()__" interface: 
+```julia 
+function fill_gaps_min(isMd::Array{Bool}, isDb::Array{Bool}, isRev::Array{Bool},
+    isCyt::Array{Bool}, isExt::Array{Bool}, noProdID::Array{Integer},
+    stoiMatrix::Array{Float64}, fluxLB::Array{Float64}, fluxUB::Array{Float64};
+    epsilon::Float64 =0.001, bigM::Float64 =1000.0, nonZero::Float64 =1e-9)
+```
+Argument | Required | Description 
+:--- | :--- | :---
+isMd | yes | true if corresponding reaction is in the model;
+isDb | yes | true if corresponding reaction is in the database, i.e., not in the model;
+isRev | yes | true if corresponding reaction is reversible
+isCyt | yes | true if corresponding metabolite is in cytosol
+isExt | yes | true if corresponding metabolite is in extracellular compartment;
+noProdID | yes | indices of no-production-metabolites;
+stoiMatrix | yes | stoichiometric matrix, \|compounds\| * \|reactions\|
+fluxLB | yes | flux lower bound;
+fluxUB | yes | flux upper bound;
+epsilon | optional | minimum amount to be considered active;
+bigM | optional | constant used in MILP model;
+nonZero | optional | minimum stoichiometric coefficient to be considered non-zero.
 
 ## Reference:
 - Maranas, Costas D., and Ali R. Zomorrodi. Optimization methods in metabolic networks. John Wiley & Sons, 2016.
