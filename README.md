@@ -13,12 +13,12 @@ For gap filling, Gurobi is set as the only solver since it works way better than
 Within [Julia](http://http://julialang.org), press "__]__" to enter __pkg>__ mode. 
 To install GFFJ, issue 
 
-```
+```julia
 add https://github.com/varnerlab/Julia_GapFill_Repository.git
 ```
 To test the GFFJ installation use:
 
-```
+```julia
 test GFFJ 
 ```
 which runs two test examples from the __test__ directory. Lastly, to delete the JuPOETs package use the command:
