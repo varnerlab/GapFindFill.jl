@@ -10,14 +10,37 @@ Users can also choose to use [GLPK](https://github.com/JuliaOpt/GLPK.jl) or [CPL
 For gap filling, Gurobi is set as the only solver since it works way better than the other two in our tests. 
 
 ## Usage
+Within [Julia](http://http://julialang.org), press __]__ to enter __pkg>__ mode. 
+To install GFFJ, issue 
+
+```
+add https://github.com/varnerlab/Julia_GapFill_Repository.git
+```
+To test the GFFJ installation use:
+
+```
+test GFFJ 
+```
+which runs two test examples from the __test__ directory. Lastly, to delete the JuPOETs package use the command:
+
+```
+rm GFFJ
+```
+
 To use GFFJ in your project simply issue the command:
 
 ```
 using GFFJ
 ```
-Two interfaces are provided, "__find_gaps__" and "__fill_gaps_min__". 
-The ``make_model()`` command takes five arguments:
 
+
+
+
+
+
+Two interfaces are provided, "__find_gaps()__" and "__fill_gaps_min()__". 
+
+The "__find_gaps()__" interface:
 Argument | Required | Description | Options | Default
 :--- | :--- | :--- | :--- | :---
 in_path | Yes | path to input file | | none
