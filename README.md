@@ -5,9 +5,9 @@ An implementation of [Gap Finding & Filling](https://bmcbioinformatics.biomedcen
 In order to use SEML, the user needs to [install Julia](https://julialang.org/downloads/platform.html) first. This version is compatible with [Julia v1.1.0](https://julialang.org/downloads/index.html).
 
 [Gurobi.jl](https://github.com/JuliaOpt/Gurobi.jl) is used in GFFJ as the default solver for both gap finding and filling. [Gurobi](http://www.gurobi.com/) provides free academic license for non-commercial use. 
-Users can also choose to use [GLPK](https://github.com/JuliaOpt/GLPK.jl) or [CPLEX](https://github.com/JuliaOpt/CPLEX.jl) for gap finding. GLPK is free for all users, while CPLEX provides free academic license. But note that comparing to Gurobi and CPLEX, it takes GLPK much more time and memory to solve the same problem. 
+Users can also choose to use [GLPK.jl](https://github.com/JuliaOpt/GLPK.jl) or [CPLEX.jl](https://github.com/JuliaOpt/CPLEX.jl) for gap finding. GLPK is free for all users, while CPLEX provides free academic license. But note that comparing to Gurobi and CPLEX, it takes GLPK much more time and memory to solve the same problem. 
 
-For gap filling, Gurobi is set as the only solver since it works way better than the other two in our tests. 
+For gap filling, Gurobi is set as the only solver since it worked way better than the other two in our tests. 
 
 ## Usage
 Within [Julia](http://http://julialang.org), press "__]__" to enter __pkg>__ mode. 
@@ -21,7 +21,8 @@ To test the GFFJ installation use:
 ```julia
 test GFFJ 
 ```
-which runs two test examples from the __test__ directory. Lastly, to delete the JuPOETs package use the command:
+which runs two test examples from the __test__ directory. 
+To delete the JuPOETs package use the command:
 
 ```julia
 rm GFFJ
