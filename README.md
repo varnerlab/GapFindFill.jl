@@ -45,7 +45,7 @@ Argument | Required | Description
 isRev | yes | true if corresponding reaction is reversible
 isCyt | yes | true if corresponding metabolite is in cytosol
 isExt | yes | true if corresponding metabolite is in extracellular compartment;
-stoiMatrix | yes | stoichiometric matrix, \|compounds\| $`\times`$ \|reactions\|
+stoiMatrix | yes | stoichiometric matrix, \|compounds\| $`\time`$ \|reactions\|
 fluxLB | yes | flux lower bound;
 fluxUB | yes | flux upper bound;
 solver | optional | CPLEX, Gurobi, GLPK;
