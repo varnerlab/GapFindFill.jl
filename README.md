@@ -37,8 +37,12 @@ Two interfaces are provided, "__find_gaps()__" and "__fill_gaps_min()__".
 
 The "__find_gaps()__" interface:
 ```julia
-function find_gaps(isRev::Array{Bool}, isCyt::Array{Bool}, isExt::Array{Bool}, stoiMatrix::Array{Float64}, fluxLB::Array{Float64}, fluxUB::Array{Float64}; epsilon::Float64 =0.001, bigM::Float64 =1000.0, nonZero::Float64 =1e-8, solver::Module=Gurobi)
+function find_gaps(isRev::Array{Bool}, isCyt::Array{Bool}, isExt::Array{Bool},
+    stoiMatrix::Array{Float64}, fluxLB::Array{Float64}, fluxUB::Array{Float64};
+    epsilon::Float64 =0.001, bigM::Float64 =1000.0, nonZero::Float64 =1e-8,
+    solver::Module=Gurobi)
 ```
+Inputs: 
 
 Argument | Required | Description 
 :--- | :--- | :---
@@ -53,6 +57,16 @@ epsilon | optional | minimum amount to be considered active;
 bigM | optional | constant used in MILP model;
 nonZero | optional | minimum stoichiometric coefficient to be considered non-zero.
 
+Outputs: 
+
+Argument | Description 
+:--- | :--- 
+m | the JuMP model;
+objVal | objective value, i.e. # non-blocked compounds;
+status | termination status;
+binX | 1 if corresponding compound is non-blocked;
+
+
 The "__fill_gaps_min()__" interface: 
 ```julia 
 function fill_gaps_min(isMd::Array{Bool}, isDb::Array{Bool}, isRev::Array{Bool},
@@ -60,6 +74,8 @@ function fill_gaps_min(isMd::Array{Bool}, isDb::Array{Bool}, isRev::Array{Bool},
     stoiMatrix::Array{Float64}, fluxLB::Array{Float64}, fluxUB::Array{Float64};
     epsilon::Float64 =0.001, bigM::Float64 =1000.0, nonZero::Float64 =1e-9)
 ```
+Inputs: 
+
 Argument | Required | Description 
 :--- | :--- | :---
 isMd | yes | true if corresponding reaction is in the model;
@@ -74,6 +90,14 @@ fluxUB | yes | flux upper bound;
 epsilon | optional | minimum amount to be considered active;
 bigM | optional | constant used in MILP model;
 nonZero | optional | minimum stoichiometric coefficient to be considered non-zero.
+
+Outputs: 
+
+Argument | Description 
+:--- | :--- 
+results | a dictionary, each key is an index of no-production-mebanolites, 
+each value is a Set containing all possible gap filling ways with minimum number of added reactions.
+
 
 ## Reference:
 - Maranas, Costas D., and Ali R. Zomorrodi. Optimization methods in metabolic networks. John Wiley & Sons, 2016.
