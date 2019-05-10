@@ -23,13 +23,13 @@ test GFFJ
 ```
 which runs two test examples from the __test__ directory. Lastly, to delete the JuPOETs package use the command:
 
-```
+```julia
 rm GFFJ
 ```
 
 To use GFFJ in your project simply issue the command:
 
-```
+```julia
 using GFFJ
 ```
 
@@ -44,14 +44,14 @@ Argument | Required | Description
 :--- | :--- | :---
 isRev | yes | true if corresponding reaction is reversible
 isCyt | yes | true if corresponding metabolite is in cytosol
-isExt | true if corresponding metabolite is in extracellular compartment;
-stoiMatrix: stoichiometric matrix, #compounds * #reactions
-fluxLB: flux lower bound;
-fluxUB: flux upper bound;
-solver: CPLEX, Gurobi, GLPK;
-epsilon: minimum amount to be considered active;
-bigM: constant used in MILP model;
-nonZero: minimum stoichiometric coefficient to be considered non-zero.
+isExt | yes | true if corresponding metabolite is in extracellular compartment;
+stoiMatrix | yes | stoichiometric matrix, \|compounds\| $\times$ \|reactions\|
+fluxLB | yes | flux lower bound;
+fluxUB | yes | flux upper bound;
+solver | optional | CPLEX, Gurobi, GLPK;
+epsilon | optional | minimum amount to be considered active;
+bigM | optional | constant used in MILP model;
+nonZero | optional | minimum stoichiometric coefficient to be considered non-zero.
 
 
 ## Reference:
