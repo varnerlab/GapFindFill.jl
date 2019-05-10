@@ -22,7 +22,8 @@ To test the GFFJ installation use:
 test GFFJ 
 ```
 which runs two test examples from the __test__ directory. 
-To delete the JuPOETs package use the command:
+
+To delete GFFJ package use the command:
 
 ```julia
 rm GFFJ
@@ -43,7 +44,7 @@ function find_gaps(isRev::Array{Bool}, isCyt::Array{Bool}, isExt::Array{Bool},
     epsilon::Float64 =0.001, bigM::Float64 =1000.0, nonZero::Float64 =1e-8,
     solver::Module=Gurobi)
 ```
-Inputs: 
+Inputs description: 
 
 Argument | Required | Description 
 :--- | :--- | :---
@@ -53,17 +54,17 @@ isExt | yes | true if corresponding metabolite is in extracellular compartment;
 stoiMatrix | yes | stoichiometric matrix, \|compounds\| * \|reactions\|
 fluxLB | yes | flux lower bound;
 fluxUB | yes | flux upper bound;
-solver | optional | CPLEX, Gurobi or GLPK;
 epsilon | optional | minimum amount to be considered active;
 bigM | optional | constant used in MILP model;
-nonZero | optional | minimum stoichiometric coefficient to be considered non-zero.
+nonZero | optional | minimum stoichiometric coefficient to be considered non-zero;
+solver | optional | CPLEX, Gurobi or GLPK.
 
-Outputs: 
+Outputs description: 
 
 Argument | Description 
 :--- | :--- 
 m | the JuMP model;
-objVal | objective value, i.e. # non-blocked compounds;
+objVal | objective value, i.e. number of non-blocked compounds;
 status | termination status;
 binX | 1 if corresponding compound is non-blocked;
 
@@ -75,7 +76,7 @@ function fill_gaps_min(isMd::Array{Bool}, isDb::Array{Bool}, isRev::Array{Bool},
     stoiMatrix::Array{Float64}, fluxLB::Array{Float64}, fluxUB::Array{Float64};
     epsilon::Float64 =0.001, bigM::Float64 =1000.0, nonZero::Float64 =1e-9)
 ```
-Inputs: 
+Inputs description:  
 
 Argument | Required | Description 
 :--- | :--- | :---
@@ -92,12 +93,11 @@ epsilon | optional | minimum amount to be considered active;
 bigM | optional | constant used in MILP model;
 nonZero | optional | minimum stoichiometric coefficient to be considered non-zero.
 
-Outputs: 
+Outputs description: 
 
 Argument | Description 
 :--- | :--- 
-results | a dictionary, each key is an index of no-production-mebanolites, 
-each value is a Set containing all possible gap filling ways with minimum number of added reactions.
+results | a dictionary, each key is an index of no-production-mebanolites, each value is a Set containing all possible gap filling ways with minimum number of added reactions.
 
 
 ## Reference:
