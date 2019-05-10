@@ -36,7 +36,7 @@ using GFFJ
 Two interfaces are provided, "__find_gaps()__" and "__fill_gaps_min()__". 
 
 The "__find_gaps()__" interface:
-```
+```julia
 function find_gaps(isRev::Array{Bool}, isCyt::Array{Bool}, isExt::Array{Bool}, stoiMatrix::Array{Float64}, fluxLB::Array{Float64}, fluxUB::Array{Float64}; epsilon::Float64 =0.001, bigM::Float64 =1000.0, nonZero::Float64 =1e-8, solver::Module=Gurobi)
 ```
 
