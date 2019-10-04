@@ -16,7 +16,7 @@ affiliations:
  - name: Institution 2
    index: 2
 date: 04 October 2019
-bibliography: paper.bib
+bibliography: paper.bibtex
 
 # # Optional fields if submitting to a AAS journal too, see this blog post:
 # # https://blog.joss.theoj.org/2018/12/a-new-collaboration-with-aas-publishing
@@ -46,7 +46,7 @@ tasks. The code is freely available on
 
 # Introduction
 
-Metabolic reconstructions of different organisms from experimental evidence and bioinformatics based knowledge are widely used to facilitate the study of biological systems [@feist2009reconstruction; schellenberger2011quantitative; thiele2010protocol; henry2010high]. 
+Metabolic reconstructions of different organisms from experimental evidence and bioinformatics based knowledge are widely used to facilitate the study of biological systems [@feist2009reconstruction; @schellenberger2011quantitative; @thiele2010protocol; @henry2010high]. 
 All of these reconstructions are inherently incomplete due to our lack of complete experimental and/or homology information \cite{kumar2007optimization}. 
 A number of computational approaches have been proposed to detect gaps in a metabolic network and subsequently generate hypotheses to fix these gaps \cite{vlassis2014fast, becker2008context, jerby2010computational, agren2012reconstruction, wang2012reconstruction, zur2010imat}.  
 The optimization based \textit{GapFind} and \textit{GapFill} approach proposed by Maranas and coworkers is one of the most widely used \cite{kumar2007optimization, maranas2016optimization}.
