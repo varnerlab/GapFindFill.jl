@@ -8,14 +8,14 @@ authors:
   - name: Zhiping Zhang
     orcid: 0000-0002-9099-4357
     affiliation: "1, 2" # (Multiple affiliations must be quoted)
-  - name: Author Without ORCID
-    affiliation: 2
+  - name: Jeffrey D. Varner
+    affiliation: 1
 affiliations:
- - name: Lyman Spitzer, Jr. Fellow, Princeton University
+ - name: Robert Frederick Smith School of Chemical and Biomolecular Engineering, Cornell University, Ithaca NY, 14853 USA
    index: 1
  - name: Institution 2
    index: 2
-date: 13 August 2017
+date: 04 October 2019
 bibliography: paper.bib
 
 # Optional fields if submitting to a AAS journal too, see this blog post:
