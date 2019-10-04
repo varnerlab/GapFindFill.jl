@@ -53,30 +53,20 @@ The optimization based \textit{GapFind} and \textit{GapFill} approach proposed b
 
 The \textit{GapFind} identifies all no-production metabolites, by solving the following mixed integer linear programming problem \cite{maranas2016optimization}: 
 
-\begin{align}
-\label{eq:find}
-\begin{split}
-    &Maximize \sum_{i\in I} x_i \\
-    s.t.&     \\
-    &\epsilon - M (1-w_{ij}) \leq S_{ij} v_j \leq M w_{ij}, \forall i \in I, j\in \{j|j\in J \& S_{ij} \ne 0 \}  \\
-    &\sum_{j\in J'} w_{ij} \geq x_i, \forall i \in I, \text{where } J' = \{J|j\in J^{ir} \& S_{ij} \ne 0\}  \\
-    &\sum_{j\in J} S_{ij} v_j \geq 0, \forall i \in I^{cyt}  \\
-    &\sum_{j\in J} S_{ij} v_j = 0, \forall i \not\in I^{cyt}  \\
-    &LB_j \leq v_j \leq UB_j, \forall j \in J  \\
-    &x_i \in \{0,1\}, \forall i \in I  \\
-    &w_{ij} \in \{0,1\}, \forall i \in I, j\in J
-\end{split}
-\end{align}
+
+where $I$ and $J$ are the set of compounds and reactions in the network, respectively,
+$x_i$ is $1$ if compound $i$ can be produced in the network, otherwise 0,
+$\epsilon$ denotes a minimum threshold for a reaction to be treated as active,
+$S_{ij}$ denotes the stoichiometric coefficient for species $i$ in reaction $j$,
+$v_j$ denotes the flux through reaction $j$,
+$w_{ij}$ is $1$ if reaction $j$ is producing compound $i$ actively, 0 otherwise.  
+$J^{ir}$ denotes the set of irreversible reactions. 
+$LB_j$ and $UB_j$ are lower and upper bounds on flux $j$, respectively. 
+$I^{cyt}$ denotes the set of cytosolic compounds.  
+
+The \textit{GapFill} tries to propose ways of bridging each gap independently by solving a new mixed integer linear programming problem repeatedly \cite{kumar2007optimization}: 
 
 
-``Gala`` was designed to be used by both astronomical researchers and by
-students in courses on gravitational dynamics or astronomy. It has already been
-used in a number of scientific publications [@Pearson:2017] and has also been
-used in graduate courses on Galactic dynamics to, e.g., provide interactive
-visualizations of textbook material [@Binney:2008]. The combination of speed,
-design, and support for Astropy functionality in ``Gala`` will enable exciting
-scientific explorations of forthcoming data releases from the *Gaia* mission
-[@gaia] by students and experts alike.
 
 # Mathematics
 
