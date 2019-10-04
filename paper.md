@@ -26,6 +26,47 @@ bibliography: paper.bib
 
 # Summary
 
+## Abstract
+
+Metabolic reconstructions are widely used to study metabolism of
+biological systems. Various computational methods have been proposed to
+automatically curate large-scale metabolic networks. The application of
+network curration tools is currently hampered by the scalability of
+algorithms and the availability of software supports. `GFFJ.jl` is a
+high-level and open-source implementation of optimization-based gap
+finding and filling algorithm in Julia. It has two advantages over the
+current implementation in `GAMS`. On one hand, it harnesses the power of
+free academic license solvers, such as Gurobi, to solve large-scale
+metabolic network curation problems as mixed integer linear programming
+problems. On the other hand, it is built upon high-performance general
+purpose programming language, Julia, thus, endows users the capability
+of embedding network curation optimization into other computational
+tasks. The code is freely available on
+<https://github.com/varnerlab/GFFJ.git>.
+
+# Introduction
+
+Metabolic reconstructions of different organisms from experimental evidence and bioinformatics based knowledge are widely used to facilitate the study of biological systems [@feist2009reconstruction; schellenberger2011quantitative; thiele2010protocol; henry2010high]. 
+All of these reconstructions are inherently incomplete due to our lack of complete experimental and/or homology information \cite{kumar2007optimization}. 
+A number of computational approaches have been proposed to detect gaps in a metabolic network and subsequently generate hypotheses to fix these gaps \cite{vlassis2014fast, becker2008context, jerby2010computational, agren2012reconstruction, wang2012reconstruction, zur2010imat}.  
+The optimization based \textit{GapFind} and \textit{GapFill} approach proposed by Maranas and coworkers is one of the most widely used \cite{kumar2007optimization, maranas2016optimization}.
+
+The \textit{GapFind} identifies all no-production metabolites, by solving the following mixed integer linear programming problem \cite{maranas2016optimization}: 
+
+\begin{align}
+\label{eq:find}
+\begin{split}
+    &Maximize \sum_{i\in I} x_i \\
+    s.t.&     \\
+    &\epsilon - M (1-w_{ij}) \leq S_{ij} v_j \leq M w_{ij}, \forall i \in I, j\in \{j|j\in J \& S_{ij} \ne 0 \}  \\
+    &\sum_{j\in J'} w_{ij} \geq x_i, \forall i \in I, \text{where } J' = \{J|j\in J^{ir} \& S_{ij} \ne 0\}  \\
+    &\sum_{j\in J} S_{ij} v_j \geq 0, \forall i \in I^{cyt}  \\
+    &\sum_{j\in J} S_{ij} v_j = 0, \forall i \not\in I^{cyt}  \\
+    &LB_j \leq v_j \leq UB_j, \forall j \in J  \\
+    &x_i \in \{0,1\}, \forall i \in I  \\
+    &w_{ij} \in \{0,1\}, \forall i \in I, j\in J
+\end{split}
+\end{align}
 
 
 ``Gala`` was designed to be used by both astronomical researchers and by
