@@ -1,14 +1,12 @@
 ---
-title: 'Gala: A Python package for galactic dynamics'
+title: 'GFFJ.jl: optimization-based gap finding and filling in Julia'
 tags:
-  - Python
-  - astronomy
-  - dynamics
-  - galactic dynamics
-  - milky way
+  - Julia
+  - metabolic network 
+  - optimization
 authors:
-  - name: Adrian M. Price-Whelan
-    orcid: 0000-0003-0872-7098
+  - name: Zhiping Zhang
+    orcid: 0000-0002-9099-4357
     affiliation: "1, 2" # (Multiple affiliations must be quoted)
   - name: Author Without ORCID
     affiliation: 2
