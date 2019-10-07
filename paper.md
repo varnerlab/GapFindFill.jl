@@ -75,7 +75,7 @@ Other symbols are as defined in the *GapFind* problem.
 # Statement of Need 
 
 The current implementation of *GapFind* and *GapFill* is in GAMS, which charges a significant amount of license fee from each single user, even though many solvers are free for academic purpose [@gurobi; @cplex].
-To promote the usage of this computational tool, we developed this open-source Julia package, GFFJ.jl, to enable researchers to use *GapFind* and *GapFill* for free by harnessing the power of academic free solvers provided by `Gurobi` and `IBM` [@gurobi, @cplex].  
+To promote the usage of this computational tool, we developed this open-source Julia package, GFFJ.jl, to enable researchers to use *GapFind* and *GapFill* for free by harnessing the power of academic free solvers provided by Gurobi and IBM [@gurobi, @cplex].  
 GFFJ.jl is implemented in Julia and makes use of the high-level interface JuMP.jl [@DunningHuchetteLubin2017; @bezanson2017julia].
 JuMP is a domain-specific modeling language for mathematical optimization embedded in Julia. 
 With JuMP, it it easier for users to specify and call different optimizers to solve optimization problems in GFFJ.jl than using interfaces provided by solvers directly. 
