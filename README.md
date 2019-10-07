@@ -34,9 +34,10 @@ To test the GFFJ installation use the following command in `pkg>` mode:
 ```julia
 test GFFJ 
 ```
-which runs two test examples under [test](https://github.com/varnerlab/GFFJ/tree/master/test) directory. 
+which runs two test examples under [test](https://github.com/varnerlab/GFFJ/tree/master/test) directory.
+The expected outcomes from this test are illustrated in **Example** section. 
 
-**Uninstallation**
+**Uninstallation**.
 To delete GFFJ package use the following command in `pkg>` mode:
 ```julia
 rm GFFJ
@@ -46,7 +47,44 @@ rm GFFJ
 ## Example 
 Two examples are provided under [test](https://github.com/varnerlab/GFFJ/tree/master/test) showing how to use GFFJ.jl to solve two problems in [Manaras paper]((https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-8-212)). 
 [testGapFind.jl](https://github.com/varnerlab/GFFJ/blob/master/test/testGapFind.jl) and 
-[testGapFill.jl](https://github.com/varnerlab/GFFJ/blob/master/test/testGapFill.jl) demonstrate how to set up *GapFind* and *GapFill* model, respectively. 
+[testGapFill.jl](https://github.com/varnerlab/GFFJ/blob/master/test/testGapFill.jl) demonstrate how to set up *GapFind* and *GapFill* models, respectively. 
+We reported our experimental results here for users reference. All experiments were run on an Intel Core i7-6700 CPU with Ubuntu 10.04.
+
+For *find_gaps*, the testing example contains 1668 compounds and 2383 reactions, which is of size of real problems. 
+**Fill in output here** The expected outcome is to find **???** gaps in the network.  
+The following table shows running time comparison between GAMS and GFFJ.jl on gap finding.
+
+Software | Solver | Running time (s) 
+:--- | :--- | :---
+GAMS | CPLEX | 3.3 
+GAMS | Gurobi | 0.6 
+GFFJ.jl | CPLEX | 68.4
+GFFJ.jl | Gurobi | 64.5
+
+GAMS is pretty fast in solving large size problems like the testing example, but GFFJ.jl finished the job in less than 2 mins, which is also acceptable for real problems as large as this example. 
+Using either Gurobi or CPLEX in GFFJ.jl did not make much difference in running time, while GLPK was unable to solve the testing example within 1 hr.
+Thus, although *find_gaps* allows users to specify GLPK as the solver, it is recommended only for small scale problems.
+
+For *fill_gaps_min*, the testing example contains 1822 compounds and 2888 reactions, which is also of size of real problems. Five no-production-metabolites were chosen as testing cases. The expected outcomes are summarized in the following table. 
+
+No-production-metabolite | Solution 1 | Solution 2
+:--- | :--- | :---
+2doxg6p[c] | EX_2DOXG6P(e) & 2DOXG6P_t | 
+2dglc[c] | EX_2DGLC(e) & 2DGLC_t | EX_2DOXG6P(e) & 2DOXG6P_t
+alatrna[c] | TRNAALA_t & EX_TRNAALA(e) | ALATRNA_t & EX_ALATRNA(e)
+2dr5p[c] | DRIB_t & EX_DRIB(e) | 2DR5P_t & EX_2DR5P(e)
+4gudbutn[c] | 4GUDBD_t & EX_4GUDBD(e) | 4GUDBUTN_t & EX_4GUDBUTN(e)
+
+The following table shows running time comparison between GAMS and GFFJ.jl on gap filling. 
+
+Software | Solver | Running time (s) 
+:--- | :--- | :---
+GAMS | Gurobi | 6.2
+GFFJ.jl | Gurobi | 28.7
+
+The difference between GAMS and GFFJ.jl is smaller than solving gap finding tasks.
+This is largely because GFFJ.jl got a speed-up from just-in-time feature of Julia as similar problems were solved repeatedly.
+
 
 ## API documentation 
 Two interfaces are provided, "__find_gaps()__" and "__fill_gaps_min()__". 
