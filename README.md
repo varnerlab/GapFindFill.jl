@@ -1,5 +1,10 @@
 # GFFJ.jl Documentation 
-An implementation of [Gap Finding & Filling](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-8-212) in Julia. 
+- [Statement of need](https://github.com/varnerlab/GFFJ/blob/master/README.md#statement-of-need)
+- [Installation instruction](https://github.com/varnerlab/GFFJ/blob/master/README.md#installation-instruction)
+- [Example](https://github.com/varnerlab/GFFJ/blob/master/README.md#example)
+- [API documentation](https://github.com/varnerlab/GFFJ/blob/master/README.md#api-documentation)
+- [Reference](https://github.com/varnerlab/GFFJ/blob/master/README.md#reference)
+- [Support or Contact](https://github.com/varnerlab/GFFJ/blob/master/README.md#support-or-contact)
 
 
 ## Statement of need 
