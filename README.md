@@ -87,9 +87,9 @@ This is largely because GFFJ.jl got a speed-up from just-in-time feature of Juli
 
 
 ## API documentation 
-Two interfaces are provided, "__find_gaps()__" and "__fill_gaps_min()__". 
+Two interfaces are provided, `find_gaps()` and `fill_gaps_min()` for gap finding and filling respectively. 
 
-The "__find_gaps()__" interface:
+The `find_gaps()` interface:
 ```julia
 function find_gaps(isRev::Array{Bool}, isCyt::Array{Bool}, isExt::Array{Bool},
     stoiMatrix::Array{Float64}, fluxLB::Array{Float64}, fluxUB::Array{Float64};
@@ -120,8 +120,7 @@ objVal | objective value, i.e. number of non-blocked compounds;
 status | termination status;
 binX | 1 if corresponding compound is non-blocked;
 
-
-The "__fill_gaps_min()__" interface: 
+The `fill_gaps_min()` interface: 
 ```julia 
 function fill_gaps_min(isMd::Array{Bool}, isDb::Array{Bool}, isRev::Array{Bool},
     isCyt::Array{Bool}, isExt::Array{Bool}, noProdID::Array{Integer},
