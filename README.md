@@ -27,7 +27,7 @@ For gap filling, Gurobi is set as the only solver since it worked way better tha
 Within [Julia](http://http://julialang.org), press `]` to enter `pkg>` mode. 
 To install GFFJ, issue 
 ```julia
-add https://github.com/varnerlab/Julia_GapFill_Repository.git
+add https://github.com/varnerlab/GFFJ.git
 ```
 To use GFFJ in your project simply issue the command:
 ```julia
