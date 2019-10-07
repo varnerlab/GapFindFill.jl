@@ -1,6 +1,7 @@
 # GFFJ.jl Documentation 
 An implementation of [Gap Finding & Filling](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-8-212) in Julia. 
 
+
 ## Statement of need 
 The current implementation of *GapFind* and *GapFill* is in GAMS, which charges a significant amount of license fee from each single user, even though many solvers are free for academic purpose.
 To promote the usage of this computational tool, we developed this open-source Julia package, GFFJ.jl, to enable researchers to use *GapFind* and *GapFill* for free by harnessing the power of academic free solvers provided by [Gurobi](https://www.gurobi.com/) and [IBM](https://www.ibm.com/analytics/cplex-optimizer).
@@ -9,6 +10,7 @@ JuMP is a domain-specific modeling language for mathematical optimization embedd
 With JuMP, it it easier for users to specify and call different optimizers to solve optimization problems in GFFJ.jl than using interfaces provided by solvers directly. 
 Built upon the generic high-level programming language Julia, users can embed GFFJ.jl in their complex work flows to simplify task processing. While GAMS, as a specific optimization tool, does not provide support of processing other tasks, nor being able to be integrated with other programming languages. 
 
+
 ## Installation instruction 
 **Requirement**.
 In order to use SEML, the user needs to [install Julia](https://julialang.org/downloads/platform.html) first. This version is compatible with [Julia v1.1.0](https://julialang.org/downloads/index.html).
@@ -16,24 +18,12 @@ In order to use SEML, the user needs to [install Julia](https://julialang.org/do
 Users can also choose to use [GLPK.jl](https://github.com/JuliaOpt/GLPK.jl) or [CPLEX.jl](https://github.com/JuliaOpt/CPLEX.jl) for gap finding. GLPK is free for all users, while CPLEX provides free academic license. But note that comparing to Gurobi and CPLEX, it takes GLPK much more time and memory to solve the same problem. 
 For gap filling, Gurobi is set as the only solver since it worked way better than the other two in our tests. 
 
-**Usage**.
-Within [Julia](http://http://julialang.org), press __]__ to enter __pkg>__ mode. 
+**Installation**.
+Within [Julia](http://http://julialang.org), press `]` to enter `pkg>` mode. 
 To install GFFJ, issue 
 
 ```julia
 add https://github.com/varnerlab/Julia_GapFill_Repository.git
-```
-To test the GFFJ installation use:
-
-```julia
-test GFFJ 
-```
-which runs two test examples from the __test__ directory. 
-
-To delete GFFJ package use the command:
-
-```julia
-rm GFFJ
 ```
 
 To use GFFJ in your project simply issue the command:
@@ -41,6 +31,22 @@ To use GFFJ in your project simply issue the command:
 ```julia
 using GFFJ
 ```
+
+**Test**. 
+To test the GFFJ installation use:
+
+```julia
+test GFFJ 
+```
+which runs two test examples under [test](https://github.com/varnerlab/GFFJ/tree/master/test) directory. 
+
+**Uninstallation**
+To delete GFFJ package use the command:
+
+```julia
+rm GFFJ
+```
+
 
 ## Example 
 Two examples are provided under [test](https://github.com/varnerlab/GFFJ/tree/master/test) showing how to use GFFJ.jl to solve two problems in [Manaras paper]((https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-8-212)). 
