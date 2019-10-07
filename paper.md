@@ -48,10 +48,10 @@ tasks.
 **Introduction**. 
 Metabolic reconstructions of different organisms from experimental evidence and bioinformatics based knowledge are widely used to facilitate the study of biological systems [@feist2009reconstruction; @schellenberger2011quantitative; @thiele2010protocol; @henry2010high]. 
 All of these reconstructions are inherently incomplete due to our lack of complete experimental and/or homology information [@kumar2007optimization]. 
-A number of computational approaches have been proposed to detect gaps in a metabolic network and subsequently generate hypotheses to fix these gaps \cite{vlassis2014fast, becker2008context, jerby2010computational, agren2012reconstruction, wang2012reconstruction, zur2010imat}.  
-The optimization based \textit{GapFind} and \textit{GapFill} approach proposed by Maranas and coworkers is one of the most widely used \cite{kumar2007optimization, maranas2016optimization}.
+A number of computational approaches have been proposed to detect gaps in a metabolic network and subsequently generate hypotheses to fix these gaps [@vlassis2014fast; @becker2008context; @jerby2010computational; @agren2012reconstruction; @wang2012reconstruction; @zur2010imat].  
+The optimization based \textit{GapFind} and \textit{GapFill} approach proposed by Maranas and coworkers is one of the most widely used [@kumar2007optimization; @maranas2016optimization].
 
-The \textit{GapFind} identifies all no-production metabolites, by solving the following mixed integer linear programming problem \cite{maranas2016optimization}: 
+The \textit{GapFind} identifies all no-production metabolites, by solving the following mixed integer linear programming problem [@maranas2016optimization]: 
 
 
 <p align="center">
@@ -68,7 +68,7 @@ $J^{ir}$ denotes the set of irreversible reactions.
 $LB_j$ and $UB_j$ are lower and upper bounds on flux $j$, respectively. 
 $I^{cyt}$ denotes the set of cytosolic compounds.  
 
-The *GapFill* tries to propose ways of bridging each gap independently by solving a new mixed integer linear programming problem repeatedly \cite{kumar2007optimization}: 
+The *GapFill* tries to propose ways of bridging each gap independently by solving a new mixed integer linear programming problem repeatedly [@kumar2007optimization]: 
 
 <p align="center">
   <img width="460" src="GapFillEqn.png">
@@ -88,14 +88,14 @@ Other symbols are as defined in the *GapFind* problem.
 
 `` illustrates the research purpose of the software.``
 
-The current implementation of *GapFind* and *GapFill* is in `GAMS`, which charges a significant amount of license fee from each single user, even though many solvers are free for academic purpose \cite{gurobi, cplex}.
-To promote the usage of this computational tool, we developed an open-source Julia package, `GFFJ.jl`, which enables researchers to use this tool for free by harnessing the power of academic free solvers provided by `Gurobi` and `IBM` \cite{gurobi, cplex}. .  
+The current implementation of *GapFind* and *GapFill* is in `GAMS`, which charges a significant amount of license fee from each single user, even though many solvers are free for academic purpose [@gurobi; @cplex].
+To promote the usage of this computational tool, we developed an open-source Julia package, `GFFJ.jl`, which enables researchers to use this tool for free by harnessing the power of academic free solvers provided by `Gurobi` and `IBM` [@gurobi, @cplex].  
 
-`GFFJ.jl` is implemented in Julia and makes use of the high-level interface `JuMP.jl` \cite{DunningHuchetteLubin2017, bezanson2017julia}.  
+`GFFJ.jl` is implemented in Julia and makes use of the high-level interface `JuMP.jl` [@DunningHuchetteLubin2017; @bezanson2017julia].  
 JuMP is a domain-specific modeling language for mathematical optimization embedded in Julia. 
 With JuMP, it it easier for users to specify and call different optimizers to solve optimization problems in `GFFJ.jl` than using interfaces provided by solvers directly. 
 Built upon the generic high-level programming language Julia, users can embed `GFFJ.jl` in their complex work flows to simplify task processing. 
-While \texttt{GAMS}, as a specific optimization tool, does not provide support of processing other tasks, nor being able to be integrated with other programming languages \cite{gams}. 
+While \texttt{GAMS}, as a specific optimization tool, does not provide support of processing other tasks, nor being able to be integrated with other programming languages [@gams]. 
 
 
 
