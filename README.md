@@ -9,13 +9,14 @@ JuMP is a domain-specific modeling language for mathematical optimization embedd
 With JuMP, it it easier for users to specify and call different optimizers to solve optimization problems in GFFJ.jl than using interfaces provided by solvers directly. 
 Built upon the generic high-level programming language Julia, users can embed GFFJ.jl in their complex work flows to simplify task processing. While GAMS, as a specific optimization tool, does not provide support of processing other tasks, nor being able to be integrated with other programming languages. 
 
-## Installation 
+## Installation instruction 
+**Requirement**.
 In order to use SEML, the user needs to [install Julia](https://julialang.org/downloads/platform.html) first. This version is compatible with [Julia v1.1.0](https://julialang.org/downloads/index.html).
 [Gurobi.jl](https://github.com/JuliaOpt/Gurobi.jl) is used in GFFJ as the default solver for both gap finding and filling. [Gurobi](http://www.gurobi.com/) provides free academic license for non-commercial use. 
 Users can also choose to use [GLPK.jl](https://github.com/JuliaOpt/GLPK.jl) or [CPLEX.jl](https://github.com/JuliaOpt/CPLEX.jl) for gap finding. GLPK is free for all users, while CPLEX provides free academic license. But note that comparing to Gurobi and CPLEX, it takes GLPK much more time and memory to solve the same problem. 
 For gap filling, Gurobi is set as the only solver since it worked way better than the other two in our tests. 
 
-## Usage
+**Installation**.
 Within [Julia](http://http://julialang.org), press "__]__" to enter __pkg>__ mode. 
 To install GFFJ, issue 
 
