@@ -1,5 +1,13 @@
-# GFFJ: Gap Finding and Filling in Julia
+# GFFJ.jl Documentation 
 An implementation of [Gap Finding & Filling](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-8-212) in Julia. 
+
+## Statement of need 
+The current implementation of *GapFind* and *GapFill* is in GAMS, which charges a significant amount of license fee from each single user, even though many solvers are free for academic purpose.
+To promote the usage of this computational tool, we developed this open-source Julia package, GFFJ.jl, to enable researchers to use *GapFind* and *GapFill* for free by harnessing the power of academic free solvers provided by [Gurobi](https://www.gurobi.com/) and [IBM](https://www.ibm.com/analytics/cplex-optimizer).
+GFFJ.jl is implemented in Julia and makes use of the high-level interface [JuMP.jl](https://github.com/JuliaOpt/JuMP.jl).
+JuMP is a domain-specific modeling language for mathematical optimization embedded in Julia. 
+With JuMP, it it easier for users to specify and call different optimizers to solve optimization problems in GFFJ.jl than using interfaces provided by solvers directly. 
+Built upon the generic high-level programming language Julia, users can embed GFFJ.jl in their complex work flows to simplify task processing. While GAMS, as a specific optimization tool, does not provide support of processing other tasks, nor being able to be integrated with other programming languages. 
 
 ## Requirement
 In order to use SEML, the user needs to [install Julia](https://julialang.org/downloads/platform.html) first. This version is compatible with [Julia v1.1.0](https://julialang.org/downloads/index.html).
