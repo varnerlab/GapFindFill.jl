@@ -26,8 +26,9 @@ bibliography: paper.bibtex
 
 # Summary
 
-## Abstract
+describing the high-level functionality and purpose of the software for a diverse, non-specialist audience. 
 
+**Abstract**
 Metabolic reconstructions are widely used to study metabolism of
 biological systems. Various computational methods have been proposed to
 automatically curate large-scale metabolic networks. The application of
@@ -44,8 +45,7 @@ of embedding network curation optimization into other computational
 tasks. The code is freely available on
 <https://github.com/varnerlab/GFFJ.git>.
 
-# Introduction
-
+**Introduction**
 Metabolic reconstructions of different organisms from experimental evidence and bioinformatics based knowledge are widely used to facilitate the study of biological systems [@feist2009reconstruction; @schellenberger2011quantitative; @thiele2010protocol; @henry2010high]. 
 All of these reconstructions are inherently incomplete due to our lack of complete experimental and/or homology information \cite{kumar2007optimization}. 
 A number of computational approaches have been proposed to detect gaps in a metabolic network and subsequently generate hypotheses to fix these gaps \cite{vlassis2014fast, becker2008context, jerby2010computational, agren2012reconstruction, wang2012reconstruction, zur2010imat}.  
