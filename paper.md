@@ -80,7 +80,7 @@ GFFJ.jl is implemented in Julia and makes use of the high-level interface JuMP.j
 JuMP is a domain-specific modeling language for mathematical optimization embedded in Julia. 
 With JuMP, it it easier for users to specify and call different optimizers to solve optimization problems in GFFJ.jl than using interfaces provided by solvers directly. 
 Built upon the generic high-level programming language Julia, users can embed GFFJ.jl in their complex work flows to simplify task processing. 
-While \texttt{GAMS}, as a specific optimization tool, does not provide support of processing other tasks, nor being able to be integrated with other programming languages [@gams]. 
+While GAMS, as a specific optimization tool, does not provide support of processing other tasks, nor being able to be integrated with other programming languages [@gams]. 
 
 
 # Acknowledgements
