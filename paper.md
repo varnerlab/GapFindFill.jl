@@ -54,6 +54,10 @@ The optimization based \textit{GapFind} and \textit{GapFill} approach proposed b
 The \textit{GapFind} identifies all no-production metabolites, by solving the following mixed integer linear programming problem \cite{maranas2016optimization}: 
 
 
+<p align="center">
+  <img width="460" height="300" src="GapFindEqn.png">
+</p>
+
 where $I$ and $J$ are the set of compounds and reactions in the network, respectively,
 $x_i$ is $1$ if compound $i$ can be produced in the network, otherwise 0,
 $\epsilon$ denotes a minimum threshold for a reaction to be treated as active,
@@ -65,6 +69,10 @@ $LB_j$ and $UB_j$ are lower and upper bounds on flux $j$, respectively.
 $I^{cyt}$ denotes the set of cytosolic compounds.  
 
 The \textit{GapFill} tries to propose ways of bridging each gap independently by solving a new mixed integer linear programming problem repeatedly \cite{kumar2007optimization}: 
+
+<p align="center">
+  <img width="460" height="300" src="GapFillEqn.png">
+</p>
 
 # Statement of Need 
 
@@ -93,9 +101,11 @@ For a quick reference, the following citation commands can be used:
 - `[@author:2001]` -> "(Author et al., 2001)"
 - `[@author1:2001; @author2:2001]` -> "(Author1 et al., 2001; Author2 et al., 2002)"
 
+<!---
 # Figures
 
 Figures can be included like this: ![Example figure.](figure.png)
+--->
 
 # Acknowledgements
 
