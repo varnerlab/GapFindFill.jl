@@ -40,7 +40,7 @@ To test the GFFJ installation use the following command in `pkg>` mode:
 test GFFJ 
 ```
 which runs two test examples under [test](https://github.com/varnerlab/GFFJ/tree/master/test) directory.
-The expected outcomes from this test are illustrated in **Example** section. 
+The expected outcomes from this test are illustrated in [Example](https://github.com/varnerlab/GFFJ/blob/master/README.md#example) section. 
 
 **Uninstallation**.
 To delete GFFJ package use the following command in `pkg>` mode:
