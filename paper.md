@@ -50,8 +50,9 @@ where $I$ and $J$ are the set of compounds and reactions in the network, respect
 $x_i$ is $1$ if compound $i$ can be produced in the network, otherwise 0,
 $\epsilon$ denotes a minimum threshold for a reaction to be treated as active,
 $S_{ij}$ denotes the stoichiometric coefficient for species $i$ in reaction $j$,
-$v_j$ denotes the flux through reaction $j$,
-$w_{ij}$ is $1$ if reaction $j$ is producing compound $i$ actively, 0 otherwise.  
+$v_j$ denotes the flux through reaction $j$, 
+$w_{ij}$ is $1$ if reaction $j$ is producing compound $i$ actively, 
+0 otherwise. 
 $J^{ir}$ denotes the set of irreversible reactions. 
 $LB_j$ and $UB_j$ are lower and upper bounds on flux $j$, respectively. 
 $I^{cyt}$ denotes the set of cytosolic compounds.  
