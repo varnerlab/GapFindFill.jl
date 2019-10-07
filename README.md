@@ -56,7 +56,7 @@ Two examples are provided under [test](https://github.com/varnerlab/GFFJ/tree/ma
 We reported our experimental results here for users reference. All experiments were run on an Intel Core i7-6700 CPU with Ubuntu 10.04.
 
 For *find_gaps*, the testing example contains 1668 compounds and 2383 reactions, which is of size of real problems. 
-**Fill in output here** The expected outcome is to find **???** gaps in the network.  
+The expected outcome is to find 115 gaps in the network, namely, 1553 metabolites can be produced.    
 The following table shows running time comparison between GAMS and GFFJ.jl on gap finding.
 
 Software | Solver | Running time (s) 
