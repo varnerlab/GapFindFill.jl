@@ -46,15 +46,14 @@ The *GapFind* identifies all no-production metabolites, by solving the following
   <img width="460"  src="GapFindEqn.png">
 </p>
 
-where $I$ and $J$ are the set of compounds and reactions in the network, respectively,
-$x_i$ is $1$ if compound $i$ can be produced in the network, otherwise 0,
-$\epsilon$ denotes a minimum threshold for a reaction to be treated as active,
-$S_{ij}$ denotes the stoichiometric coefficient for species $i$ in reaction $j$,
-$v_j$ denotes the flux through reaction $j$, 
-$w_{ij}$ is $1$ if reaction $j$ is producing compound $i$ actively, 
-0 otherwise. 
-$J^{ir}$ denotes the set of irreversible reactions. 
-$LB_j$ and $UB_j$ are lower and upper bounds on flux $j$, respectively. 
+where $I$ and $J$ are the set of compounds and reactions in the network, respectively;
+$x_i$ is $1$ if compound $i$ can be produced in the network, otherwise 0;
+$\epsilon$ denotes a minimum threshold for a reaction to be treated as active;
+$S_{ij}$ denotes the stoichiometric coefficient for species $i$ in reaction $j$;
+$v_j$ denotes the flux through reaction $j$;
+$w_{ij}$ is $1$ if reaction $j$ is producing compound $i$ actively, 0 otherwise;
+$J^{ir}$ denotes the set of irreversible reactions;
+$LB_j$ and $UB_j$ are lower and upper bounds on flux $j$, respectively;
 $I^{cyt}$ denotes the set of cytosolic compounds.  
 
 The *GapFill* tries to propose ways of bridging each gap independently by solving a new mixed integer linear programming problem repeatedly [@kumar2007optimization]: 
@@ -63,9 +62,9 @@ The *GapFill* tries to propose ways of bridging each gap independently by solvin
   <img width="460" src="GapFillEqn.png">
 </p>
 
-where $y_i$ is $1$ if reaction $i$ is added to the model or made to be reversible.
-$J^{db}$ and $J^{md}$ stand for the set of reactions in the model and database, respectively. 
-$J^{ir}$ and $J^{rev}$ stand for the set of irreversible and reversible reactions, respectively. 
+where $y_i$ is $1$ if reaction $i$ is added to the model or made to be reversible;
+$J^{db}$ and $J^{md}$ stand for the set of reactions in the model and database, respectively;
+$J^{ir}$ and $J^{rev}$ stand for the set of irreversible and reversible reactions, respectively.
 Thus, $J = J^{md} + J^{db} = J^{ir} + J^{rev}$.
 $i^*$ is the index of no-production compound that is going to be fixed. 
 $I^{ext}$ is the set of extracellular compounds. 
@@ -75,17 +74,13 @@ Other symbols are as defined in the *GapFind* problem.
 
 # Statement of Need 
 
-`` illustrates the research purpose of the software.``
-
-The current implementation of *GapFind* and *GapFill* is in `GAMS`, which charges a significant amount of license fee from each single user, even though many solvers are free for academic purpose [@gurobi; @cplex].
-To promote the usage of this computational tool, we developed an open-source Julia package, `GFFJ.jl`, which enables researchers to use this tool for free by harnessing the power of academic free solvers provided by `Gurobi` and `IBM` [@gurobi, @cplex].  
-
-`GFFJ.jl` is implemented in Julia and makes use of the high-level interface `JuMP.jl` [@DunningHuchetteLubin2017; @bezanson2017julia].  
+The current implementation of *GapFind* and *GapFill* is in GAMS, which charges a significant amount of license fee from each single user, even though many solvers are free for academic purpose [@gurobi; @cplex].
+To promote the usage of this computational tool, we developed this open-source Julia package, GFFJ.jl, to enable researchers to use *GapFind* and *GapFill* for free by harnessing the power of academic free solvers provided by `Gurobi` and `IBM` [@gurobi, @cplex].  
+GFFJ.jl is implemented in Julia and makes use of the high-level interface JuMP.jl [@DunningHuchetteLubin2017; @bezanson2017julia].  
 JuMP is a domain-specific modeling language for mathematical optimization embedded in Julia. 
-With JuMP, it it easier for users to specify and call different optimizers to solve optimization problems in `GFFJ.jl` than using interfaces provided by solvers directly. 
-Built upon the generic high-level programming language Julia, users can embed `GFFJ.jl` in their complex work flows to simplify task processing. 
+With JuMP, it it easier for users to specify and call different optimizers to solve optimization problems in GFFJ.jl than using interfaces provided by solvers directly. 
+Built upon the generic high-level programming language Julia, users can embed GFFJ.jl in their complex work flows to simplify task processing. 
 While \texttt{GAMS}, as a specific optimization tool, does not provide support of processing other tasks, nor being able to be integrated with other programming languages [@gams]. 
-
 
 
 # Acknowledgements
