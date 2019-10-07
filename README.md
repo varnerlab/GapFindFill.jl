@@ -16,8 +16,8 @@ In order to use SEML, the user needs to [install Julia](https://julialang.org/do
 Users can also choose to use [GLPK.jl](https://github.com/JuliaOpt/GLPK.jl) or [CPLEX.jl](https://github.com/JuliaOpt/CPLEX.jl) for gap finding. GLPK is free for all users, while CPLEX provides free academic license. But note that comparing to Gurobi and CPLEX, it takes GLPK much more time and memory to solve the same problem. 
 For gap filling, Gurobi is set as the only solver since it worked way better than the other two in our tests. 
 
-**Installation**.
-Within [Julia](http://http://julialang.org), press "__]__" to enter __pkg>__ mode. 
+**Usage**.
+Within [Julia](http://http://julialang.org), press __]__ to enter __pkg>__ mode. 
 To install GFFJ, issue 
 
 ```julia
@@ -41,6 +41,13 @@ To use GFFJ in your project simply issue the command:
 ```julia
 using GFFJ
 ```
+
+## Example 
+Two examples are provided under [test](https://github.com/varnerlab/GFFJ/tree/master/test) showing how to use GFFJ.jl to solve two problems in [Manaras paper]((https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-8-212)). 
+[testGapFind.jl](https://github.com/varnerlab/GFFJ/blob/master/test/testGapFind.jl) and 
+[testGapFill.jl](https://github.com/varnerlab/GFFJ/blob/master/test/testGapFill.jl) demonstrate how to set up *GapFind* and *GapFill* model, respectively. 
+
+
 
 Two interfaces are provided, "__find_gaps()__" and "__fill_gaps_min()__". 
 
