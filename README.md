@@ -47,8 +47,7 @@ Two examples are provided under [test](https://github.com/varnerlab/GFFJ/tree/ma
 [testGapFind.jl](https://github.com/varnerlab/GFFJ/blob/master/test/testGapFind.jl) and 
 [testGapFill.jl](https://github.com/varnerlab/GFFJ/blob/master/test/testGapFill.jl) demonstrate how to set up *GapFind* and *GapFill* model, respectively. 
 
-
-
+## API documentation 
 Two interfaces are provided, "__find_gaps()__" and "__fill_gaps_min()__". 
 
 The "__find_gaps()__" interface:
@@ -121,4 +120,4 @@ results | a dictionary, each key is an index of no-production-mebanolites, each 
 
 
 ## Support or Contact
-Having trouble at installation or function? Feel free to contact the [authors](https://github.com/varnerlab) or [authors](https://www.cheme.cornell.edu/faculty-directory/jeffrey-d-varner).
+Having trouble at installation or function? Feel free to contact [VarnerLab](https://github.com/varnerlab) or [authors](https://www.cheme.cornell.edu/faculty-directory/jeffrey-d-varner).
