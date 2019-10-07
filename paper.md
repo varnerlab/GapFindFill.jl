@@ -26,7 +26,7 @@ bibliography: paper.bibtex
 
 # Summary
 
-describing the high-level functionality and purpose of the software for a diverse, non-specialist audience. 
+``describing the high-level functionality and purpose of the software for a diverse, non-specialist audience.`` 
 
 **Abstract**
 Metabolic reconstructions are widely used to study metabolism of
@@ -66,7 +66,9 @@ $I^{cyt}$ denotes the set of cytosolic compounds.
 
 The \textit{GapFill} tries to propose ways of bridging each gap independently by solving a new mixed integer linear programming problem repeatedly \cite{kumar2007optimization}: 
 
+# Statement of Need 
 
+`` illustrates the research purpose of the software.``
 
 # Mathematics
 
