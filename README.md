@@ -22,7 +22,14 @@ In order to use SEML, the user needs to [install Julia](https://julialang.org/do
 [Gurobi.jl](https://github.com/JuliaOpt/Gurobi.jl) is used in GFFJ as the default solver for both gap finding and filling. [Gurobi](http://www.gurobi.com/) provides free academic license for non-commercial use. 
 Users can also choose to use [GLPK.jl](https://github.com/JuliaOpt/GLPK.jl) or [CPLEX.jl](https://github.com/JuliaOpt/CPLEX.jl) for gap finding. GLPK is free for all users, while CPLEX provides free academic license. But note that comparing to Gurobi and CPLEX, it takes GLPK much more time and memory to solve the same problem. 
 For gap filling, Gurobi is set as the only solver since it worked way better than the other two in our tests. 
-Once [CPLEX.jl](https://github.com/JuliaOpt/CPLEX.jl) is updated for Julia 1.2, GFFJ.jl will also be compatible with Julia 1.2. 
+
+For [Julia v1.0](https://julialang.org/downloads/) users, any issues while testing/using GFFJ.jl can be resolved by pinning CPLEX.jl and Gurobi.jl to a specific version by running following commands in `pkg>` mode: 
+```julia
+pin Gurobi@0.6.0
+pin CPLEX@0.5.0 
+```
+
+For [Julia v1.2](https://julialang.org/downloads/) users, GFFJ.jl will also be compatible with Julia v1.2 once [CPLEX.jl](https://github.com/JuliaOpt/CPLEX.jl) is updated for Julia v1.2. 
 
 **Installation**.
 Within [Julia](http://http://julialang.org), press `]` to enter `pkg>` mode. 
