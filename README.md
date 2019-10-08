@@ -23,16 +23,16 @@ In order to use SEML, the user needs to [install Julia](https://julialang.org/do
 Users can also choose to use [GLPK.jl](https://github.com/JuliaOpt/GLPK.jl) or [CPLEX.jl](https://github.com/JuliaOpt/CPLEX.jl) for gap finding. GLPK is free for all users, while CPLEX provides free academic license. But note that comparing to Gurobi and CPLEX, it takes GLPK much more time and memory to solve the same problem. 
 For gap filling, Gurobi is set as the only solver since it worked way better than the other two in our tests. 
 
-For [Julia v1.0](https://julialang.org/downloads/) users, any package compatibility issues while testing GFFJ.jl can be resolved by pinning CPLEX.jl and Gurobi.jl to a specific version by running following commands in `pkg>` mode: 
+For [Julia v1.0](https://julialang.org/downloads/) users, any package compatibility issues while testing GFFJ.jl can be resolved through pinning CPLEX.jl and Gurobi.jl to a specific version by running following commands in `pkg>` mode: 
 ```julia
 pin Gurobi@0.6.0
 pin CPLEX@0.5.0 
 ```
 
-For [Julia v1.2](https://julialang.org/downloads/) users, GFFJ.jl will also be compatible with Julia v1.2 once [CPLEX.jl](https://github.com/JuliaOpt/CPLEX.jl) is updated for Julia v1.2. 
+For [Julia v1.2](https://julialang.org/downloads/) users, GFFJ.jl will be compatible with Julia v1.2 once [CPLEX.jl](https://github.com/JuliaOpt/CPLEX.jl) is updated for Julia v1.2. 
 
 **Installation**.
-Within [Julia](http://http://julialang.org), press `]` to enter `pkg>` mode. 
+Within Julia, press `]` to enter `pkg>` mode. 
 To install GFFJ, issue 
 ```julia
 add https://github.com/varnerlab/GFFJ.git
@@ -43,12 +43,12 @@ using GFFJ
 ```
 
 **Test**. 
-To test the GFFJ installation use the following command in `pkg>` mode:
+To test GFFJ installation, use the following command in `pkg>` mode:
 ```julia
 test GFFJ 
 ```
-which runs two test examples under [test](https://github.com/varnerlab/GFFJ/tree/master/test) directory.
-The expected outcomes from this test are illustrated in [Example](https://github.com/varnerlab/GFFJ/blob/master/README.md#example) section. 
+which runs two examples under [test](https://github.com/varnerlab/GFFJ/tree/master/test) directory.
+The expected outcomes from this test set are illustrated in [Example](https://github.com/varnerlab/GFFJ/blob/master/README.md#example) section. 
 
 **Uninstallation**.
 To delete GFFJ package use the following command in `pkg>` mode:
@@ -61,7 +61,7 @@ rm GFFJ
 Two examples are provided under [test](https://github.com/varnerlab/GFFJ/tree/master/test) showing how to use GFFJ.jl to solve two problems in [Manaras paper]((https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-8-212)). 
 [testGapFind.jl](https://github.com/varnerlab/GFFJ/blob/master/test/testGapFind.jl) and 
 [testGapFill.jl](https://github.com/varnerlab/GFFJ/blob/master/test/testGapFill.jl) demonstrate how to set up *GapFind* and *GapFill* models, respectively. 
-We reported our experimental results here for users reference. All experiments were run on an Intel Core i7-6700 CPU with Ubuntu 10.04.
+We reported our experimental results here for users' reference. All experiments were run on an Intel Core i7-6700 CPU with Ubuntu 10.04 in Julia 1.1.
 
 For *find_gaps*, the testing example contains 1668 compounds and 2383 reactions, which is of size of real problems. 
 The expected outcome is to find 115 blocked metabollites in the network, namely, 1553 non-blocked metabolites. The following table shows running time comparison between GAMS and GFFJ.jl on gap finding.
@@ -75,7 +75,7 @@ GFFJ.jl | Gurobi | 64.5
 
 GAMS is pretty fast in solving large size problems like the testing example, but GFFJ.jl finished the job in less than 2 mins, which is also acceptable for real problems as large as this example. 
 Using either Gurobi or CPLEX in GFFJ.jl did not make much difference in running time, while GLPK was unable to solve the testing example within 1 hr.
-Thus, although *find_gaps* allows users to specify GLPK as the solver, it is recommended only for small scale problems.
+Thus, although *find_gaps* allows users to specify GLPK as the solver, it is recommended only for small-scale problems.
 
 For *fill_gaps_min*, the testing example contains 1822 compounds and 2888 reactions, which is also of size of real problems. Five no-production-metabolites were chosen as testing cases. The expected outcomes are summarized in the following table. 
 
