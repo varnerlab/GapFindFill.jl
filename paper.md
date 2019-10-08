@@ -1,7 +1,8 @@
 ---
-title: 'GFFJ.jl: optimization-based gap finding and filling in Julia'
+title: 'GFFJ.jl: optimization-based Gap Finding and Filling in Julia'
 tags:
   - Julia
+  - systems biology
   - metabolic network 
   - optimization
 authors:
