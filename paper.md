@@ -43,20 +43,7 @@ Metabolic reconstructions of different organisms from experimental evidence and 
 
 The *GapFind* identifies all no-production metabolites, by solving the following mixed integer linear programming problem [@maranas2016optimization]: 
 
-$$\begin{align*}
-\label{eq:find}
-\begin{split}
-    &Maximize \sum_{i\in I} x_i \\
-    s.t.&     \\
-    &\epsilon - M (1-w_{ij}) \leq S_{ij} v_j \leq M w_{ij}, \forall i \in I, j\in \{j|j\in J \& S_{ij} \ne 0 \}  \\
-    &\sum_{j\in J'} w_{ij} \geq x_i, \forall i \in I, \text{where } J' = \{J|j\in J^{ir} \& S_{ij} \ne 0\}  \\
-    &\sum_{j\in J} S_{ij} v_j \geq 0, \forall i \in I^{cyt}  \\
-    &\sum_{j\in J} S_{ij} v_j = 0, \forall i \not\in I^{cyt}  \\
-    &LB_j \leq v_j \leq UB_j, \forall j \in J  \\
-    &x_i \in \{0,1\}, \forall i \in I  \\
-    &w_{ij} \in \{0,1\}, \forall i \in I, j\in J
-\end{split}
-\end{align*}$$
+![GapFind model.](GapFindEqn.png)
 
 where $I$ and $J$ are the set of compounds and reactions in the network, respectively;
 $x_i$ is $1$ if compound $i$ can be produced in the network, otherwise 0;
@@ -70,22 +57,7 @@ $I^{cyt}$ denotes the set of cytosolic compounds.
 
 The *GapFill* tries to propose ways of bridging each gap independently by solving a new mixed integer linear programming problem repeatedly [@kumar2007optimization]: 
 
-$$\begin{align*}
-\label{eq:fill}
-\begin{split}
-    &Minimize \sum_{i\in J^{db}\cup (J^{md}\cap J^{ir})} y_i  \\
-    s.t.&  \\
-    &\epsilon - M (1-w_j) \leq S_{i^*j} v_j \leq M w_j, j\in \{j|j\in J \& S_{i^*j} \ne 0 \} \\
-    &\sum_{j\in J} S_{ij} v_j \geq 0, \forall i \in I^{cyt} \setminus I^{ext}  \\
-    &\sum_{j\in J} S_{ij} v_j = 0, \forall i \in I \setminus \{I^{cyt} \cup I^{ext}\}  \\
-    &\sum_{j\in J} w_j \geq 1 \\
-    &LB_j \leq v_j \leq UB_j, \forall j \in J^{md} \cap J^{rev}  \\
-    &-M y_j \leq v_j \leq UB_j, \forall j \in J^{md} \cap J^{ir}  \\
-    &LB_j y_j \leq v_j \leq UB_j y_j, \forall j \in J^{db}  \\
-    &y_j \in \{0,1\}, \forall j \in J^{db} \cup \{J^{md}\cap J^{ir}\}  \\
-    &w_j \in \{0,1\}, \forall j\in J
-\end{split}
-\end{align*}$$
+![GapFill model.](GapFillEqn.png)
 
 where $y_i$ is $1$ if reaction $i$ is added to the model or made to be reversible;
 $J^{db}$ and $J^{md}$ stand for the set of reactions in the model and database, respectively;
