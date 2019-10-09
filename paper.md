@@ -56,7 +56,7 @@ $$\begin{align*}
     &x_i \in \{0,1\}, \forall i \in I  \\
     &w_{ij} \in \{0,1\}, \forall i \in I, j\in J
 \end{split}
-\end{align**}$$
+\end{align*}$$
 
 where $I$ and $J$ are the set of compounds and reactions in the network, respectively;
 $x_i$ is $1$ if compound $i$ can be produced in the network, otherwise 0;
