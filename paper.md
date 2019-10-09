@@ -43,7 +43,19 @@ Metabolic reconstructions of different organisms from experimental evidence and 
 
 The *GapFind* identifies all no-production metabolites, by solving the following mixed integer linear programming problem [@maranas2016optimization]: 
 
-![GapFind model.](GapFindEqn.svg)
+$$\begin{align*}
+\begin{split}
+    &Maximize \sum_{i\in I} x_i \\
+    s.t.&     \\
+    &\epsilon - M (1-w_{ij}) \leq S_{ij} v_j \leq M w_{ij}, \forall i \in I, j\in \{j|j\in J \& S_{ij} \ne 0 \}  \\
+    &\sum_{j\in J'} w_{ij} \geq x_i, \forall i \in I, \text{where } J' = \{J|j\in J^{ir} \& S_{ij} \ne 0\}  \\
+    &\sum_{j\in J} S_{ij} v_j \geq 0, \forall i \in I^{cyt}  \\
+    &\sum_{j\in J} S_{ij} v_j = 0, \forall i \not\in I^{cyt}  \\
+    &LB_j \leq v_j \leq UB_j, \forall j \in J  \\
+    &x_i \in \{0,1\}, \forall i \in I  \\
+    &w_{ij} \in \{0,1\}, \forall i \in I, j\in J
+\end{split}
+\end{align**}$$
 
 where $I$ and $J$ are the set of compounds and reactions in the network, respectively;
 $x_i$ is $1$ if compound $i$ can be produced in the network, otherwise 0;
