@@ -43,9 +43,7 @@ Metabolic reconstructions of different organisms from experimental evidence and 
 
 The *GapFind* identifies all no-production metabolites, by solving the following mixed integer linear programming problem [@maranas2016optimization]: 
 
-<p align="center">
-  <img width="460"  src="GapFindEqn.svg">
-</p>
+![GapFind model.](GapFindEqn.svg)
 
 where $I$ and $J$ are the set of compounds and reactions in the network, respectively;
 $x_i$ is $1$ if compound $i$ can be produced in the network, otherwise 0;
@@ -59,9 +57,7 @@ $I^{cyt}$ denotes the set of cytosolic compounds.
 
 The *GapFill* tries to propose ways of bridging each gap independently by solving a new mixed integer linear programming problem repeatedly [@kumar2007optimization]: 
 
-<p align="center">
-  <img width="460" src="GapFillEqn.svg">
-</p>
+![GapFill model.](GapFillEqn.svg)
 
 where $y_i$ is $1$ if reaction $i$ is added to the model or made to be reversible;
 $J^{db}$ and $J^{md}$ stand for the set of reactions in the model and database, respectively;
