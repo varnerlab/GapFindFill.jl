@@ -29,7 +29,7 @@ network curration tools is currently hampered by the scalability of
 algorithms and the availability of software supports. GFFJ.jl is a
 high-level and open-source implementation of optimization-based gap
 finding and filling algorithm in Julia. It has two advantages over the
-current implementation in GAMS. On one hand, it harnesses the power of
+current implementation in `GAMS`. On one hand, it harnesses the power of
 free academic license solvers, such as Gurobi, to solve large-scale
 metabolic network curation problems as mixed integer linear programming
 problems. On the other hand, it is built upon high-performance general
