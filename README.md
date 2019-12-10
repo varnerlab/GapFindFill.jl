@@ -12,7 +12,7 @@ The current implementation of *GapFind* and *GapFill* is in GAMS, which charges 
 To promote the usage of this computational tool, we developed this open-source Julia package, `GapFindFill.jl`, to enable researchers to use *GapFind* and *GapFill* for free by harnessing the power of academic free solvers provided by [Gurobi](https://www.gurobi.com/) and [IBM](https://www.ibm.com/analytics/cplex-optimizer).
 `GapFindFill.jl` is implemented in Julia and makes use of the high-level interface [JuMP.jl](https://github.com/JuliaOpt/JuMP.jl).
 JuMP is a domain-specific modeling language for mathematical optimization embedded in Julia.
-With JuMP, it it easier for users to specify and call different optimizers to solve optimization problems in `GapFindFill.jl` than using interfaces provided by solvers directly.
+With JuMP, it is easier for users to specify and call different optimizers to solve optimization problems in `GapFindFill.jl` than using interfaces provided by solvers directly.
 Built upon the generic high-level programming language Julia, users can embed `GapFindFill.jl` in their complex work flows to simplify task processing. While GAMS, as a specific optimization tool, does not provide support for processing other tasks, nor being able to be integrated with other programming languages.
 
 
@@ -35,7 +35,7 @@ For [Julia v1.2](https://julialang.org/downloads/) users, GapFindFill.jl will be
 Within Julia, press `]` to enter `pkg>` mode.
 To install GapFindFill.jl, issue
 ```julia
-add https://github.com/varnerlab/GapFindFill.git
+add https://github.com/varnerlab/GapFindFill.jl.git
 ```
 To use GapFindFill in your project simply issue the command:
 ```julia
@@ -61,7 +61,7 @@ rm GapFindFill
 Two examples are provided under [test](https://github.com/varnerlab/GapFindFill/tree/master/test) showing how to use GapFindFill.jl to solve two problems in [Manaras paper]((https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-8-212)).
 [testGapFind.jl](https://github.com/varnerlab/GapFindFill/blob/master/test/testGapFind.jl) and
 [testGapFill.jl](https://github.com/varnerlab/GapFindFill/blob/master/test/testGapFill.jl) demonstrate how to set up *GapFind* and *GapFill* models, respectively.
-We reported our experimental results here for users' reference. All experiments were run on an Intel Core i7-6700 CPU with Ubuntu 10.04 in Julia 1.1.
+We reported our experimental results here for users' reference. All experiments were run on an Intel Core i7-6700 CPU with Ubuntu 18.04.3 LTS.
 
 For *find_gaps*, the testing example contains 1668 compounds and 2383 reactions, which is of size of real problems.
 The expected outcome is to find 115 blocked metabollites in the network, namely, 1553 non-blocked metabolites. The following table shows running time comparison between GAMS and GapFindFill.jl on gap finding.
