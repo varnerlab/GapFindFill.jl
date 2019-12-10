@@ -1,4 +1,4 @@
-# GFFJ Interface
+# GapFindFill Interface
 
 #=
 Set up MILP model for Gap-Find

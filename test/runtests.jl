@@ -1,4 +1,4 @@
-using GFFJ, Test
+using GapFindFill, Test
 # using JuMP, Gurobi, CPLEX, GLPK
 
 println("Starting tests....................")

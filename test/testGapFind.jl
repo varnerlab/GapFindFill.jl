@@ -1,4 +1,4 @@
-using GFFJ, Test, Gurobi
+using GapFindFill, Test, Gurobi
 include("loadGAMS.jl")
 
 println("======Tesing Gap Finding===")
