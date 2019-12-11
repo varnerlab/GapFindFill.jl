@@ -11,8 +11,8 @@ JuMP = "4076af6c-e467-56ae-b986-b466b2749572"
 
 [compat]
 CPLEX = "0.6"
-GLPK = "0.6"
-Gurobi = "0.5"
+GLPK = "<= 0.12"
+Gurobi = "<= 0.7"
 JuMP = "~0.20"
 julia = "~1.1"
 
