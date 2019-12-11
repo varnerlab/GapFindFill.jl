@@ -10,10 +10,10 @@ Gurobi = "2e9cd046-0924-5485-92f1-d5272153d98b"
 JuMP = "4076af6c-e467-56ae-b986-b466b2749572"
 
 [compat]
-CPLEX = "< 0.6"
-GLPK = "< 0.13"
-Gurobi = "< 0.8"
-JuMP = "< 0.21"
+CPLEX = "< 0.6.2"
+GLPK = "< 0.12.1"
+Gurobi = "< 0.7.5"
+JuMP = "< 0.20.2"
 julia = "~1.1"
 
 [extras]
