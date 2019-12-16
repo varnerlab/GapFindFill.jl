@@ -35,6 +35,10 @@ For [Julia v1.2](https://julialang.org/downloads/) users, GapFindFill.jl will be
 Within Julia, press `]` to enter `pkg>` mode.
 To install GapFindFill.jl, issue
 ```julia
+add GapFindFill
+```
+or issue 
+```julia
 add https://github.com/varnerlab/GapFindFill.jl.git
 ```
 To use GapFindFill in your project simply issue the command:
